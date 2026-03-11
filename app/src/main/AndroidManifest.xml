@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- Location Permissions -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- Background Location (Android 10+) -->
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <!-- Usage Stats Permission -->
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS"
+        tools:ignore="ProtectedPermissions" />
+    <!-- Overlay Permission -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <!-- Foreground Service Permission -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <!-- Notification Permission for Android 13+ -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <!-- Foreground Service Type for Android 11+ -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.GuideGrowth"
+        tools:targetApi="31">
+        
+        <!-- Main Activity is the launcher activity -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <!-- Login Activity no longer needs launcher intent filter -->
+        <activity
+            android:name=".ui.auth.LoginActivity"
+            android:exported="false" />
+        
+        <activity
+            android:name=".ui.auth.RoleSelectionActivity"
+            android:exported="false" />
+        
+        <activity
+            android:name=".ui.parent.ParentDashboardActivity"
+            android:exported="false" />
+        
+        <activity
+            android:name=".ui.child.ChildServiceManagerActivity"
+            android:exported="false"
+            android:label="Child Dashboard" />
+        
+        <!-- Firebase Cloud Messaging service -->
+        <service
+            android:name=".service.FCMService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        
+        <!-- Child Monitoring Service -->
+        <service
+            android:name=".service.ChildMonitorService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="location|dataSync" />
+        
+        <!-- Add this meta-data for a default notification channel -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="guidegrowth_notifications" />
+
+        <!-- Permissions Manager Activity -->
+        <activity
+            android:name=".ChildServiceManagerActivity"
+            android:exported="false"
+            android:theme="@style/Theme.GuideGrowth"
+            android:label="Child Permissions Setup" />
+
+        <!-- Device Admin Receiver -->
+        <receiver
+            android:name=".receivers.DeviceAdminReceiver"
+            android:description="@string/device_admin_description"
+            android:label="@string/device_admin_label"
+            android:permission="android.permission.BIND_DEVICE_ADMIN"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.device_admin"
+                android:resource="@xml/device_admin_policies" />
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".ui.parent.AddChildActivity"
+            android:exported="false"
+            android:label="Add Child"
+            android:parentActivityName=".ui.parent.ParentDashboardActivity" />
+
+        <activity
+            android:name=".ui.child.BedtimeEnforcementActivity"
+            android:exported="false"
+            android:theme="@style/Theme.GuideGrowth.Fullscreen"
+            android:showOnLockScreen="true" />
+
+        <activity
+            android:name=".ui.child.ScreenTimeLimitActivity" 
+            android:exported="false"
+            android:theme="@style/Theme.GuideGrowth.Fullscreen"
+            android:showOnLockScreen="true" />
+
+        <activity
+            android:name=".ui.features.FeaturesActivity"
+            android:exported="false"
+            android:theme="@style/Theme.GuideGrowth" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAUGrU01h8jkzHno9gmo_ZUkTkXwwp1GyA" />
+    </application>
+
+</manifest>

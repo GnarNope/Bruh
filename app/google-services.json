@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "677242216596",
+    "project_id": "guidegrowth-dfa56",
+    "storage_bucket": "guidegrowth-dfa56.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:677242216596:android:650d21c1a0171667af5481",
+        "android_client_info": {
+          "package_name": "com.myapp.guidegrowth"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRfMquWCY6JBW6QCXrrvJKaEk9Tv03L-8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

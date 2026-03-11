@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base colors -->
+    <color name="primary">#4285F4</color> <!-- Bright blue -->
+    <color name="primary_variant">#3367D6</color> <!-- Darker blue -->
+    <color name="secondary">#FF9800</color> <!-- Orange -->
+    <color name="secondary_variant">#F57C00</color> <!-- Darker orange -->
+    
+    <!-- Child-friendly color scheme -->
+    <color name="cheerful_blue">#4285F4</color>
+    <color name="playful_green">#34A853</color>
+    <color name="sunny_yellow">#FBBC05</color>
+    <color name="friendly_red">#EA4335</color>
+    <color name="soft_purple">#9C27B0</color>
+    <color name="gentle_teal">#009688</color>
+    
+    <!-- Status colors -->
+    <color name="service_active">#34A853</color> <!-- Green -->
+    <color name="service_inactive">#EA4335</color> <!-- Red -->
+    <color name="warning_color">#FBBC05</color> <!-- Yellow -->
+    
+    <!-- Permission status colors -->
+    <color name="permission_granted">#34A853</color> <!-- Green -->
+    <color name="permission_pending">#FBBC05</color> <!-- Yellow -->
+
+    <!-- Background colors -->
+    <color name="background">#F5F5F5</color>
+    <color name="surface">#FFFFFF</color>
+    
+    <!-- Text colors -->
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+    
+    <!-- System colors -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>

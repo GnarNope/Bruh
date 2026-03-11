@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">GuideGrowth</string>
+    <string name="device_admin_label">GuideGrowth Child Protection</string>
+    <string name="device_admin_description">Enable GuideGrowth to manage device settings and enforce parental controls.</string>
+    
+    <!-- Navigation drawer -->
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    
+    <!-- Features descriptions -->
+    <string name="feature_location_tracking">Real-time location monitoring keeps parents informed of their child\'s whereabouts.</string>
+    <string name="feature_app_usage">Track which apps your child uses and for how long.</string>
+    <string name="feature_screen_time">Set daily screen time limits and configure bedtime hours when device usage is restricted.</string>
+    <string name="feature_remote_control">Remotely lock or unlock your child\'s device in emergency situations.</string>
+    
+    <!-- General strings -->
+    <string name="action_settings">Settings</string>
+    <string name="action_logout">Logout</string>
+</resources>

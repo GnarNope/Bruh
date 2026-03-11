@@ -1,0 +1,14 @@
+{
+    "github.copilot.chat.codeGeneration.instructions": [
+        {
+          "text": "Note that my app name is GuideGrowth - this is for controlling the childs phone via a parent within the application."
+        },
+        {
+            "text": "Make sure the ui is simple and easy to use but still a minimalistic design."
+        },
+        {
+          "file": "code-style.md" // import instructions from file `code-style.md`
+        }
+      ],
+    
+}
